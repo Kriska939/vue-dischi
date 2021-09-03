@@ -6,6 +6,14 @@ const app = new Vue({
         albumList: [],
 
     },
+
+    computed: {
+        orderedAlbums() {
+            return this.albumList.sort((a, b) => {
+                return a.year - b.year;
+            })
+        }
+    },
     methods: {
 
     },
