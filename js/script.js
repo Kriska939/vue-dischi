@@ -3,7 +3,7 @@ Vue.config.devtools = true;
 const app = new Vue({
     el: '#app',
     data: {
-        albumList: "",
+        albumList: [],
 
     },
     methods: {
@@ -13,8 +13,7 @@ const app = new Vue({
     created() {
         axios.get('https://flynn.boolean.careers/exercises/api/array/music')
             .then((r) => {
-                const response = r.data.response;
-                this.albumList = response;
+                this.albumList = r.data.response;
                 console.log(this.albumList);
             });
     }
